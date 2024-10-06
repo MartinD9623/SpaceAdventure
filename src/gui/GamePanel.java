@@ -9,6 +9,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
+import game.Laser;
 import game.Rocket;
 import timeClock.BackgroundTimer;
 import timeClock.CollisionTimer;
@@ -74,6 +75,7 @@ public class GamePanel extends JPanel {
 		timingAction = new TimingAction();
 		this.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ENTER"), "timing");
 		this.getActionMap().put("timing", GamePanel.getTimingAction());
+		// this.getActionMap().put("timing", GamePanel.restart());
 
 		this.setVisible(true);
 	}
@@ -89,6 +91,8 @@ public class GamePanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			BackgroundTimer.setStart(true);
+			EnemiesTimer.setStart(true);
+			EnemiesMoveTimer.setMoveEnemies(true);
 		}
 	}
 

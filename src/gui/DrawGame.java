@@ -3,10 +3,14 @@ package gui;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.ArrayList;
 
 import javax.swing.JLabel;
 
+import game.Enemy;
 import game.ImageLoader;
+import game.Laser;
+import game.Rocket;
 import timeClock.BackgroundTimer;
 
 public class DrawGame extends JLabel {
@@ -19,70 +23,51 @@ public class DrawGame extends JLabel {
 	protected void paintComponent(Graphics g) {
 
 		super.paintComponent(g);
-
 		Graphics2D g2D = (Graphics2D) g;
 
-		g2D.drawImage(ImageLoader.getBackground(), 0, -600 + BackgroundTimer.getBackgroundY(), MainFrame.getWidth(),
+		Rocket rocket = GamePanel.getRocket().get(0);
+
+		g2D.drawImage(ImageLoader.getBackground(1), 0, -600 + BackgroundTimer.getBackgroundY(), MainFrame.getWidth(),
 				MainFrame.getHeight(), null);
 
-		g2D.drawImage(ImageLoader.getBackground2(), 0, BackgroundTimer.getBackgroundY(), MainFrame.getWidth(),
+		g2D.drawImage(ImageLoader.getBackground(2), 0, BackgroundTimer.getBackgroundY(), MainFrame.getWidth(),
 				MainFrame.getHeight(), null);
 
-		switch (SettingsPanel.rocketType) {
-		case 1:
-			g.drawImage(ImageLoader.getRocketGray(), GamePanel.getRocket().get(0).getX(),
-					GamePanel.getRocket().get(0).getY(), GamePanel.getRocket().get(0).getWidth(),
-					GamePanel.getRocket().get(0).getHeight(), null);
-			break;
-		case 2:
-			g.drawImage(ImageLoader.getRocketGreen(), GamePanel.getRocket().get(0).getX(),
-					GamePanel.getRocket().get(0).getY(), GamePanel.getRocket().get(0).getWidth(),
-					GamePanel.getRocket().get(0).getHeight(), null);
-			break;
-		case 3:
-			g.drawImage(ImageLoader.getRocketRed(), GamePanel.getRocket().get(0).getX(),
-					GamePanel.getRocket().get(0).getY(), GamePanel.getRocket().get(0).getWidth(),
-					GamePanel.getRocket().get(0).getHeight(), null);
-			break;
-		case 4:
-			g.drawImage(ImageLoader.getRocketYellow(), GamePanel.getRocket().get(0).getX(),
-					GamePanel.getRocket().get(0).getY(), GamePanel.getRocket().get(0).getWidth(),
-					GamePanel.getRocket().get(0).getHeight(), null);
-			break;
-		default:
-			g.drawImage(ImageLoader.getRocketGray(), GamePanel.getRocket().get(0).getX(),
-					GamePanel.getRocket().get(0).getY(), GamePanel.getRocket().get(0).getWidth(),
-					GamePanel.getRocket().get(0).getHeight(), null);
-			break;
-		}
+		g.drawImage(ImageLoader.getRocket(SettingsPanel.rocketType), rocket.getX(),
+				rocket.getY(), rocket.getWidth(),
+				rocket.getHeight(), null);
 
 		// Color Laser
 		switch (SettingsPanel.getLaserType()) {
-		case 0:
-			g.setColor(new Color(0, 0, 255));
-			break;
-		case 1:
-			g.setColor(new Color(255, 0, 0));
-			break;
-		case 2:
-			g.setColor(new Color(0, 255, 0));
-			break;
+			case 0:
+				g.setColor(new Color(0, 0, 255));
+				break;
+			case 1:
+				g.setColor(new Color(255, 0, 0));
+				break;
+			case 2:
+				g.setColor(new Color(0, 255, 0));
+				break;
 		}
 
-		for (int i = 0; i < GamePanel.getRocket().get(0).getLasers().size(); i++) {
+		ArrayList<Laser> lasers = rocket.getLasers();
+		for (int i = 0; i < lasers.size(); i++) {
 
-			g.drawLine(GamePanel.getRocket().get(0).getLasers().get(i).getLaserX(),
-					GamePanel.getRocket().get(0).getLasers().get(i).getLaserY(),
-					GamePanel.getRocket().get(0).getLasers().get(i).getLaserX(),
-					GamePanel.getRocket().get(0).getLasers().get(i).getLaserY() - 10);
+			Laser laser = lasers.get(i);
+			g.drawLine(laser.getLaserX(),
+					laser.getLaserY(),
+					laser.getLaserX(),
+					laser.getLaserY() - 10);
 		}
 
-		for (int e = 0; e < GamePanel.getEnemiesTimer().getEnemies().size(); e++) {
+		ArrayList<Enemy> enemies = GamePanel.getEnemiesTimer().getEnemies();
 
-			g.drawImage(ImageLoader.getEnemy(), GamePanel.getEnemiesTimer().getEnemies().get(e).getX(),
-					GamePanel.getEnemiesTimer().getEnemies().get(e).getY(),
-					GamePanel.getEnemiesTimer().getEnemies().get(0).getWidth(),
-					GamePanel.getEnemiesTimer().getEnemies().get(0).getHeight(), null);
+		for (int e = 0; e < enemies.size(); e++) {
+			Enemy enemy = enemies.get(e);
+			g.drawImage(ImageLoader.getEnemy(), enemy.getX(),
+					enemy.getY(),
+					enemy.getWidth(),
+					enemy.getHeight(), null);
 		}
 		repaint();
 

@@ -32,32 +32,30 @@ public class ImageLoader {
 		}
 	}
 	
-	public static BufferedImage getBackground() {
-		return background;
+	public static BufferedImage getBackground(int number) {
+		switch (number) {
+			case 1:
+				return background;
+			case 2:
+				return background2;
+			default:
+				return background;
+		}
 	}
-	
-	public static BufferedImage getBackground2() {
-		return background2;
-	}
-	
-	public static BufferedImage getBackground3() {
-		return background2;
-	}
-	
-	public static BufferedImage getRocketGray() {
-		return rocketGray;
-	}
-	
-	public static BufferedImage getRocketGreen() {
-		return rocketGreen;
-	}
-	
-	public static BufferedImage getRocketRed() {
-		return rocketRed;
-	}
-	
-	public static BufferedImage getRocketYellow() {
-		return rocketYellow;
+
+	public static BufferedImage getRocket(int rocketType) {
+		switch(rocketType) {
+			case 1:
+				return rocketGray;
+			case 2:
+				return rocketGreen;
+			case 3:
+				return rocketRed;
+			case 4:
+				return rocketYellow;
+			default:
+				return rocketGray;
+		}
 	}
 	
 	public static BufferedImage getEnemy() {

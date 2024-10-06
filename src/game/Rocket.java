@@ -37,7 +37,6 @@ public class Rocket {
 	}
 
 	public class UpAction extends AbstractAction {
-	
 
 		/**
 		 * 
@@ -46,9 +45,10 @@ public class Rocket {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Rocket rocket = GamePanel.getRocket().get(0);
 			// TODO Auto-generated method stub
-			if (GamePanel.getRocket().get(0).getY() >= 5) {
-				GamePanel.getRocket().get(0).setY(GamePanel.getRocket().get(0).getY() - 5);
+			if (rocket.getY() >= 5) {
+				rocket.setY(rocket.getY() - 5);
 			}
 		}
 	}
@@ -62,9 +62,10 @@ public class Rocket {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Rocket rocket = GamePanel.getRocket().get(0);
 			// TODO Auto-generated method stub
-			if (GamePanel.getRocket().get(0).getY() <= 490) {
-				GamePanel.getRocket().get(0).setY(GamePanel.getRocket().get(0).getY() + 5);
+			if (rocket.getY() <= 490) {
+				rocket.setY(rocket.getY() + 5);
 			}
 		}
 	}
@@ -78,9 +79,10 @@ public class Rocket {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Rocket rocket = GamePanel.getRocket().get(0);
 			// TODO Auto-generated method stub
-			if (GamePanel.getRocket().get(0).getX() >= 5) {
-				GamePanel.getRocket().get(0).setX(GamePanel.getRocket().get(0).getX() - 5);
+			if (rocket.getX() >= 5) {
+				rocket.setX(rocket.getX() - 5);
 			}
 		}
 	}
@@ -94,9 +96,10 @@ public class Rocket {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Rocket rocket = GamePanel.getRocket().get(0);
 			// TODO Auto-generated method stub
-			if (GamePanel.getRocket().get(0).getX() <= 440) {
-				GamePanel.getRocket().get(0).setX(GamePanel.getRocket().get(0).getX() + 5);
+			if (rocket.getX() <= 440) {
+				rocket.setX(rocket.getX() + 5);
 			}
 		}
 	}
@@ -110,9 +113,10 @@ public class Rocket {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			Rocket rocket = GamePanel.getRocket().get(0);
 			// TODO Auto-generated method stub
-			GamePanel.getRocket().get(0).setShoot(1);
-			GamePanel.getRocket().get(0).lasers.add(new Laser());
+			rocket.setShoot(1);
+			rocket.lasers.add(new Laser());
 		}
 	}
 

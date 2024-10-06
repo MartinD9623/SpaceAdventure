@@ -61,6 +61,7 @@ public class CollisionTimer implements Runnable {
 					rocket.setX(250);
 					rocket.setY(450);
 					BackgroundTimer.setStart(false);
+					// EnemiesMoveTimer.setMoveEnemies(false);
 					EnemiesTimer.setStart(false);
 					break;
 				}

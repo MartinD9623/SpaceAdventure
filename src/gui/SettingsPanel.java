@@ -16,7 +16,7 @@ public class SettingsPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private JButton btnLrocket, btnRrocket;
 	private JButton btnLdif, btnRdif;
 	private JButton btnToMenu, btnGame;
@@ -80,7 +80,7 @@ public class SettingsPanel extends JPanel {
 		btnGame.addActionListener(e -> {
 			MainFrame.showOtherCd("Game");
 			BackgroundTimer.setStart(true);
-			//timing = true;
+			// timing = true;
 		});
 
 		this.add(btnToMenu);
@@ -93,41 +93,25 @@ public class SettingsPanel extends JPanel {
 		super.paintComponent(g);
 		Graphics2D g2D = (Graphics2D) g;
 
-		g2D.drawImage(ImageLoader.getBackground(), 0, -600 + BackgroundTimer.getBackgroundY(), MainFrame.getWidth(),
+		g2D.drawImage(ImageLoader.getBackground(1), 0, -600 + BackgroundTimer.getBackgroundY(), MainFrame.getWidth(),
 				MainFrame.getHeight(), null);
 
-		g2D.drawImage(ImageLoader.getBackground2(), 0, BackgroundTimer.getBackgroundY(), MainFrame.getWidth(),
+		g2D.drawImage(ImageLoader.getBackground(2), 0, BackgroundTimer.getBackgroundY(), MainFrame.getWidth(),
 				MainFrame.getHeight(), null);
 
-		switch (rocketType) {
-		case 1:
-			g.drawImage(ImageLoader.getRocketGray(), 225, 50, 50, 100, null);
-			break;
-		case 2:
-			g.drawImage(ImageLoader.getRocketGreen(), 225, 50, 50, 100, null);
-			break;
-		case 3:
-			g.drawImage(ImageLoader.getRocketRed(), 225, 50, 50, 100, null);
-			break;
-		case 4:
-			g.drawImage(ImageLoader.getRocketYellow(), 225, 50, 50, 100, null);
-			break;
-		default:
-			g.drawImage(ImageLoader.getRocketGray(), 225, 50, 50, 100, null);
-			break;
-		}
+		g.drawImage(ImageLoader.getRocket(rocketType), 225, 50, 50, 100, null);
 
 		// laserType
 		switch (laserType) {
-		case 0:
-			g.setColor(new Color(0, 0, 255));
-			break;
-		case 1:
-			g.setColor(new Color(255, 0, 0));
-			break;
-		case 2:
-			g.setColor(new Color(0, 255, 0));
-			break;
+			case 0:
+				g.setColor(new Color(0, 0, 255));
+				break;
+			case 1:
+				g.setColor(new Color(255, 0, 0));
+				break;
+			case 2:
+				g.setColor(new Color(0, 255, 0));
+				break;
 		}
 		g.fillRect(225, 300, 50, 50);
 

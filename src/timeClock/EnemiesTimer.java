@@ -15,24 +15,25 @@ public class EnemiesTimer implements Runnable {
 		enemies = new ArrayList<>();
 		buildEnemies = true;
 
-		while (buildEnemies) {
+		while (true) {
 			if (buildEnemies) {
 				try {
-						enemies.add(new Enemy());
-						System.out.println("Added Enemey");
-						Thread.sleep(2000);
-					
+					enemies.add(new Enemy());
+					System.out.println("Added Enemey");
+					Thread.sleep(2000);
+
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				System.out.println("Added");
+			}else{
+				enemies.clear();
 			}
 		}
 	}
-	
-	public static void setStart(boolean start)
-	{
+
+	public static void setStart(boolean start) {
 		buildEnemies = start;
 	}
 

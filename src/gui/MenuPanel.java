@@ -40,7 +40,7 @@ public class MenuPanel extends JPanel {
 
 		Graphics2D g2D = (Graphics2D) g;
 
-		g2D.drawImage(ImageLoader.getBackground(), 0, 0, MainFrame.getWidth(), MainFrame.getHeight(), null);
+		g2D.drawImage(ImageLoader.getBackground(1), 0, 0, MainFrame.getWidth(), MainFrame.getHeight(), null);
 		
 		repaint();
 	}
