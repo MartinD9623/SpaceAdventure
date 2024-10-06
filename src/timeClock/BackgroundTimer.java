@@ -8,7 +8,6 @@ public class BackgroundTimer {
 
 	private Timer timer;
 	private static int backgroundY = 0, backgroundYY = -3000;
-	//public static boolean timing = true;
 	private static boolean backgroundStart;
 
 	public BackgroundTimer(boolean start) {
@@ -19,7 +18,7 @@ public class BackgroundTimer {
 			@Override
 
 			public void run() {
-				if (backgroundStart == true) {//BackgroundTimer.timing) {
+				if (backgroundStart == true) {
 					if (backgroundY < MainFrame.getHeight()) {
 						backgroundY += 5;
 					} else {
@@ -30,17 +29,11 @@ public class BackgroundTimer {
 		}, 0, 50);
 	}
 
-	/*public static boolean getTiming() {
-		return timing;
-	}*/
-	
-	public static void setStart(boolean start)
-	{
+	public static void setStart(boolean start) {
 		backgroundStart = start;
 	}
-	
-	public static boolean getStart()
-	{
+
+	public static boolean getStart() {
 		return backgroundStart;
 	}
 

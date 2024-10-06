@@ -35,12 +35,10 @@ public class Enemy {
 	}
 
 	public int getWidth() {
-		// TODO Auto-generated method stub
 		return width;
 	}
 
 	public int getHeight() {
-		// TODO Auto-generated method stub
 		return height;
 	}
 }

@@ -18,7 +18,6 @@ public class LaserTimer { // need correction: timer is getting faster after ever
 
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				if (BackgroundTimer.getStart()) {
 					ArrayList<Laser> lasers = GamePanel.getRocket().get(0).getLasers();
 					for (int i = 0; i < lasers.size(); i++) {
@@ -26,10 +25,8 @@ public class LaserTimer { // need correction: timer is getting faster after ever
 						laser.setLaserY(laser.getLaserY() - 1);
 					}
 				}
-
 			}
-
 		}, 0, 10);
 	}
-
+	
 }

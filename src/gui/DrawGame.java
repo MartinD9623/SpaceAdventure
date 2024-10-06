@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JLabel;
 
@@ -60,7 +61,7 @@ public class DrawGame extends JLabel {
 					laser.getLaserY() - 10);
 		}
 
-		ArrayList<Enemy> enemies = GamePanel.getEnemiesTimer().getEnemies();
+		List<Enemy> enemies = GamePanel.getEnemiesTimer().getEnemies();
 
 		for (int e = 0; e < enemies.size(); e++) {
 			Enemy enemy = enemies.get(e);

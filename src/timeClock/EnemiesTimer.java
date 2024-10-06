@@ -1,34 +1,36 @@
 package timeClock;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
 import game.Enemy;
 
 public class EnemiesTimer implements Runnable {
 
-	public static ArrayList<Enemy> enemies;
+	private final List<Enemy> enemies = Collections.synchronizedList(new ArrayList<>());
 	private static boolean buildEnemies;
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		enemies = new ArrayList<>();
 		buildEnemies = true;
 
 		while (true) {
 			if (buildEnemies) {
 				try {
-					enemies.add(new Enemy());
+					synchronized (enemies) {
+						enemies.add(new Enemy());
+					}
 					System.out.println("Added Enemey");
 					Thread.sleep(2000);
 
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				System.out.println("Added");
-			}else{
+			} else {
 				enemies.clear();
+
 			}
 		}
 	}
@@ -37,7 +39,7 @@ public class EnemiesTimer implements Runnable {
 		buildEnemies = start;
 	}
 
-	public ArrayList<Enemy> getEnemies() {
+	public List<Enemy> getEnemies() {
 		return enemies;
 	}
 

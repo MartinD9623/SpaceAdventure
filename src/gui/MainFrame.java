@@ -1,12 +1,9 @@
 package gui;
 
 import java.awt.CardLayout;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
-
-import timeClock.EnemiesTimer;
 
 public class MainFrame{
 	

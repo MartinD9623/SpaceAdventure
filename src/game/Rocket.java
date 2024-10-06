@@ -46,7 +46,6 @@ public class Rocket {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Rocket rocket = GamePanel.getRocket().get(0);
-			// TODO Auto-generated method stub
 			if (rocket.getY() >= 5) {
 				rocket.setY(rocket.getY() - 5);
 			}
@@ -63,7 +62,6 @@ public class Rocket {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Rocket rocket = GamePanel.getRocket().get(0);
-			// TODO Auto-generated method stub
 			if (rocket.getY() <= 490) {
 				rocket.setY(rocket.getY() + 5);
 			}
@@ -80,7 +78,6 @@ public class Rocket {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Rocket rocket = GamePanel.getRocket().get(0);
-			// TODO Auto-generated method stub
 			if (rocket.getX() >= 5) {
 				rocket.setX(rocket.getX() - 5);
 			}
@@ -97,7 +94,6 @@ public class Rocket {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Rocket rocket = GamePanel.getRocket().get(0);
-			// TODO Auto-generated method stub
 			if (rocket.getX() <= 440) {
 				rocket.setX(rocket.getX() + 5);
 			}
@@ -114,7 +110,6 @@ public class Rocket {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Rocket rocket = GamePanel.getRocket().get(0);
-			// TODO Auto-generated method stub
 			rocket.setShoot(1);
 			rocket.lasers.add(new Laser());
 		}

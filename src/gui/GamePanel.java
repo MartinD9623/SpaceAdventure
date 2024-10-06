@@ -9,7 +9,6 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
-import game.Laser;
 import game.Rocket;
 import timeClock.BackgroundTimer;
 import timeClock.CollisionTimer;
@@ -89,7 +88,6 @@ public class GamePanel extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
 			BackgroundTimer.setStart(true);
 			EnemiesTimer.setStart(true);
 			EnemiesMoveTimer.setMoveEnemies(true);

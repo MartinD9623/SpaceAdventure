@@ -1,6 +1,7 @@
 package timeClock;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import game.Enemy;
 import game.Laser;
@@ -17,11 +18,8 @@ public class CollisionTimer implements Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-
 		while (running) {
-
-			ArrayList<Enemy> enemies = GamePanel.getEnemiesTimer().getEnemies();
+			List<Enemy> enemies = GamePanel.getEnemiesTimer().getEnemies();
 
 			for (int e = 0; e < enemies.size(); e++) {
 
@@ -61,11 +59,11 @@ public class CollisionTimer implements Runnable {
 					rocket.setX(250);
 					rocket.setY(450);
 					BackgroundTimer.setStart(false);
-					// EnemiesMoveTimer.setMoveEnemies(false);
 					EnemiesTimer.setStart(false);
 					break;
 				}
 			}
+
 		}
 	}
 
