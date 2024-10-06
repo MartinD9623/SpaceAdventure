@@ -1,5 +1,8 @@
 package timeClock;
 
+import java.util.ArrayList;
+
+import game.Enemy;
 import gui.GamePanel;
 
 public class EnemiesMoveTimer implements Runnable {
@@ -9,17 +12,18 @@ public class EnemiesMoveTimer implements Runnable {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		//moveEnemies = true;
+		// moveEnemies = true;
 
 		while (moveEnemies) {
 
 			try {
-				if (GamePanel.getEnemiesTimer().getEnemies() != null)
-				{
-				for (int e = 0; e < GamePanel.getEnemiesTimer().getEnemies().size(); e++)
-					GamePanel.getEnemiesTimer().getEnemies().get(e)
-							.setY(GamePanel.getEnemiesTimer().getEnemies().get(e).getY() + 1);
-				Thread.sleep(5);
+				if (GamePanel.getEnemiesTimer().getEnemies() != null) {
+					ArrayList<Enemy> enemies = GamePanel.getEnemiesTimer().getEnemies();
+					for (int e = 0; e < enemies.size(); e++) {
+						Enemy enemy = enemies.get(e);
+						enemy.setY(enemy.getY() + 1);
+					}
+					Thread.sleep(5);
 				}
 
 			} catch (InterruptedException e) {

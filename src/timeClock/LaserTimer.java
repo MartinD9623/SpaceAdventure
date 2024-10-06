@@ -1,7 +1,10 @@
 package timeClock;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import game.Laser;
 import gui.GamePanel;
 
 public class LaserTimer { // need correction: timer is getting faster after every use!!!
@@ -17,9 +20,10 @@ public class LaserTimer { // need correction: timer is getting faster after ever
 			public void run() {
 				// TODO Auto-generated method stub
 				if (BackgroundTimer.getStart()) {
-					for (int i = 0; i < GamePanel.getRocket().get(0).getLasers().size(); i++) {
-						GamePanel.getRocket().get(0).getLasers().get(i)
-								.setLaserY(GamePanel.getRocket().get(0).getLasers().get(i).getLaserY() - 1);
+					ArrayList<Laser> lasers = GamePanel.getRocket().get(0).getLasers();
+					for (int i = 0; i < lasers.size(); i++) {
+						Laser laser = lasers.get(i);
+						laser.setLaserY(laser.getLaserY() - 1);
 					}
 				}
 
