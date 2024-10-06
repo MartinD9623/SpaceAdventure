@@ -16,13 +16,13 @@ public class ImageLoader {
 		
 		try {
 			
-			background = ImageIO.read(ImageLoader.class.getResource("/images/background.jpg"));
-			background2 = ImageIO.read(ImageLoader.class.getResource("/images/background.jpg"));
+			background = ImageIO.read(ImageLoader.class.getResource("/images/stars.jpeg"));
+			background2 = ImageIO.read(ImageLoader.class.getResource("/images/stars.jpeg"));
 			
-			rocketGray = ImageIO.read(ImageLoader.class.getResource("/images/rocketGray.png"));
-			rocketGreen = ImageIO.read(ImageLoader.class.getResource("/images/rocketGreen.png"));
-			rocketRed = ImageIO.read(ImageLoader.class.getResource("/images/rocketRed.png"));
-			rocketYellow = ImageIO.read(ImageLoader.class.getResource("/images/rocketYellow.png"));
+			rocketGray = ImageIO.read(ImageLoader.class.getResource("/images/rocket1.png"));
+			rocketGreen = ImageIO.read(ImageLoader.class.getResource("/images/rocket2.png"));
+			rocketRed = ImageIO.read(ImageLoader.class.getResource("/images/rocket3.png"));
+			rocketYellow = ImageIO.read(ImageLoader.class.getResource("/images/rocket4.png"));
 			
 			enemy = ImageIO.read(ImageLoader.class.getResource("/images/enemy.png"));
 			
